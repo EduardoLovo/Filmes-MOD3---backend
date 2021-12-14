@@ -28,7 +28,7 @@ app.use('/filmes', filmesRouter);
 // ==============================================
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.info(`Rodando na porta http://localhost:${port}/`);
 });
 
