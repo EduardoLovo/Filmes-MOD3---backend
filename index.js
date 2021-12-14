@@ -18,17 +18,24 @@ Conn("localhost", 27017, "filmes")
 
 
 // Rotas ===================
+const filmesRouter = require('./routers/filmes.routes');
+app.use('/filmes', filmesRouter);
+
+
 app.get('/', (req, res) => {
     res.send('Bem vindo');
 });
 
-const filmesRouter = require('./routers/filmes.routes');
-app.use('/filmes', filmesRouter);
+
 
 // ==============================================
 
 
 app.listen(process.env.PORT || port, () => {
-    console.info(`Rodando na porta http://localhost:${port}/`);
+    if (port == true) {
+        console.info(`Rodando na porta http://localhost:${port}/`);
+    } else {
+        console.log("Rodando na porta do Heroku");
+    }
 });
 
