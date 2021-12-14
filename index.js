@@ -2,8 +2,6 @@ const express = require('express');
 
 const app = express();
 
-const port = 3000;
-
 app.use(express.json());  // Faz as reqs do express trabalhar em json
 
 
@@ -13,6 +11,8 @@ app.use(express.json());  // Faz as reqs do express trabalhar em json
 const Conn = require('./models/conn/conn');
 
 Conn("localhost", 27017, "filmes")
+
+const port = 3000;
 
 // ==============================================
 
@@ -32,10 +32,6 @@ app.get('/', (req, res) => {
 
 
 app.listen(process.env.PORT || port, () => {
-    if (port == true) {
-        console.info(`Rodando na porta http://localhost:${port}/`);
-    } else {
-        console.log("Rodando na porta do Heroku");
-    }
+    console.info(`Rodando na porta http://localhost:${port}/`);
 });
 

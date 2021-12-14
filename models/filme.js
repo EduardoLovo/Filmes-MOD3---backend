@@ -7,7 +7,8 @@ const mongoose = require('mongoose');
 // Model para criar novo filme
 const filmeModel = new mongoose.Schema({
     nome: { type: String, required: true },
-    img: { type: String, required: true }
+    img: { type: String, required: true },
+    dataCriacao: { type: Date, default: Date.now }
 })
 
 
