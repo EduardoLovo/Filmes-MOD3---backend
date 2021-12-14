@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
             res.status(200).send(filme);
         })
         .catch((err) => {
-            res.status(400).send("Algo deu errado,, tente novamente!");
+            res.status(400).send("Algo deu errado, tente novamente!");
             console.error(err);
         })
 });

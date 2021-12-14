@@ -9,7 +9,7 @@ app.use(express.json());  // Faz as reqs do express trabalhar em json
 
 // ==============================================
 
-//Conexão com mongodb
+//Conexão local com mongodb
 const Conn = require('./models/conn/conn');
 
 Conn("localhost", 27017, "filmes")
