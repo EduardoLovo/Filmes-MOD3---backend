@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 
 // Retorna apenas o filme do id selecionado
 router.get('/:id', async (req, res) => {
-    await Filme.find({ _id: req.params.id })
+    await Filme.findOne({ _id: req.params.id })
         .then((filme) => {
             res.status(200).send(filme);
         })

@@ -1,10 +1,20 @@
 require('dotenv').config();
 const express = require('express');
 
+// cors para integração com front
+const cors = require('cors');
+
+const corsOptions = {
+    origin: 'http://localhost:3001',
+    optionsSuccessStatus: 200,
+}
+
+// ==============================================
+
 const app = express();
 
 app.use(express.json());  // Faz as reqs do express trabalhar em json
-
+app.use(cors(corsOptions));
 
 // ==============================================
 
