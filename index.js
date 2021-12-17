@@ -16,6 +16,7 @@ const filmesRouter = require('./routers/filmes.routes');
 const app = express();
 
 app.use(express.json());  // Faz as reqs do express trabalhar em json
+
 app.use(cors());
 
 
@@ -24,7 +25,6 @@ app.use(cors());
 // Rotas ===================
 
 app.use('/filmes', filmesRouter);
-
 
 app.get('/', (req, res) => {
     res.send('Bem vindo');
@@ -40,20 +40,13 @@ const db_user = process.env.DB_USER;
 const db_pass = process.env.DB_PASS;
 const db_data = process.env.DB_DATA;
 
-Conn(db_url, db_user, db_pass, db_data)
-
-
-
-
-
-
+Conn(db_url, db_user, db_pass, db_data);
 
 
 // ==============================================
 
-const port = 3000;
 
-app.listen(process.env.PORT || port, () => {
-    console.log(`Rodando na porta http://localhost:${port}`);
+app.listen(process.env.PORT, () => {
+    console.log('Rodando com Banco');
 });
 
